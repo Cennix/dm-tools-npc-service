@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import NpcDetails, NpcRelationshipMapper
+
+admin.site.register(NpcDetails)
+admin.site.register(NpcRelationshipMapper)
