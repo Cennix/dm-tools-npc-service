@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-# Create your views here.
+from .models import NpcDetails
+from .serializers import NpcDetailsSerializer
+
+class NpcDetails(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Retrieve, update or delete a NPC instance.
+    """
+    queryset = NpcDetails.objects.all()
+    serializer_class = NpcDetailsSerializer
+
